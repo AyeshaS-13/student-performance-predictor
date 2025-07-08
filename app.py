@@ -17,7 +17,7 @@ previous_grade = st.slider("📈 Previous Grade (%)", 0, 100, 65)
 ses = st.selectbox("🏠 Socioeconomic Status", ["Low", "Medium", "High"])
 ses_encoded = {"Low": 0, "Medium": 1, "High": 2}[ses]
 
-model = joblib.load("student_model.pkl")
+model = joblib.load("student_model_py313.pkl")
 if st.button("🔍 Predict Result"):
     input_data = np.array([[attendance, internal_marks, study_hours, previous_grade, ses_encoded]])
     prediction = model.predict(input_data)[0]
